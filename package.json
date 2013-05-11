@@ -1,0 +1,11 @@
+{
+	"name":"namecoinjs",
+	"description":"Namecoin cryptocurrency implementation in Nodejs",
+	"version":"0.0.1",
+	"private":true,
+	"dependencies":{
+		"connect":"",
+		"bitcoinjs":"git://github.com/bitcoinjs/bitcoinjs-server.git",
+		"socket.io":""
+	}
+}
