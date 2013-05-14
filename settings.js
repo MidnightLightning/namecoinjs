@@ -7,6 +7,7 @@ var cfg = exports.Settings = new Bitcoin.Settings();
 
 // Override defaults
 cfg.network.port = 8334;
+cfg.network.magicBytes = hex('f9beb4fe');
 cfg.network.bootstrap = [
   new Bootstrapper([0x58cea445, 0x2b562f4e, 0x291f20b2])
 ];
