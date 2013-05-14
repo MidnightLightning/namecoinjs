@@ -9,6 +9,7 @@ var COINBASE_OP = Bitcoin.COINBASE_OP;
 
 cfg.homedir = './';
 node = new Bitcoin.Node(cfg);
+node.version = 35000;
 node.start();
 
 var chain = node.getBlockChain();

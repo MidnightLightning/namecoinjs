@@ -15,6 +15,7 @@ Bootstrapper.prototype.bootstrap = function (node, peermanager) {
     for (i=0; i<4; i++) {
       pieces[i] = parseInt(pieces[i], 16);
     }
+    pieces.reverse();
     peermanager.addPeer(pieces.join('.'), 8334);
   });
 };
