@@ -12,6 +12,11 @@ cfg.network.bootstrap = [
   new Bootstrapper([0x58cea445, 0x2b562f4e, 0x291f20b2])
 ];
 
+cfg.network.altChain = true;
+cfg.network.auxPOWFlag = 1 << 8;
+cfg.network.auxPOWStart = 19200;
+cfg.network.auxPOWChain = 1;
+
 
 /*
 bool GenesisBlock(CBlock& block, int extra)

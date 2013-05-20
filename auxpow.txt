@@ -1,0 +1,60 @@
+https://en.bitcoin.it/wiki/Merged_mining_specification
+Header:
+=======
+01010100  // version
+36909ac07a1673daf65fa7d828882e66c9e89f8546cdd50a9fb1000000000000 // Previous block hash
+0f5c6549bcd608ab7c4eac593e5bd5a73b2d432eb63518708f778fc7dcdfaf88 // Merkle root
+8d1a904e // Timestamp
+69b2001b // Bits
+00000000 // Nonce
+
+Coinbase Transaction:
+====================
+01000000 // Version
+01 // TxIn Count
+0000000000000000000000000000000000000000000000000000000000000000ffffffff // Previous Out
+35 // Script size
+045dee091a014d522cfabe6d6dd8a7c3e01e1e95bcee015e6fcc7583a2ca60b79e5a3aa0a171eddd344ada903d0100000000000000 // Script
+ffffffff // Sequence Number
+01 // TxOut Count
+60a0102a01000000 // Amount
+43 // Script Size
+4104f8bbe97ed2acbc5bba11c68f6f1a0313f918f3d3c0e8475055e351e3bf442f8c8dcee682d2457bdc5351b70dd9e34026766eba18b06eaee2e102efd1ab634667ac // Script
+00000000 // Lock Time
+
+Merkle Link:
+============
+a903ef9de1918e4b44f6176a30c0e7c7e3439c96fb597327473d000000000000 // Hash of block header
+05 // Number of links in branch
+050ac4a1a1e1bce0c48e555b1a9f935281968c72d6379b24729ca0425a3fc3cb
+433cd348b35ea22806cf21c7b146489aef6989551eb5ad2373ab6121060f3034
+1d648757c0217d43e66c57eaed64fc1820ec65d157f33b741965183a5e0c8506
+ac2602dfe2f547012d1cc75004d48f97aba46bd9930ff285c9f276f5bd09f356
+df19724579d65ec7cb62bf97946dfc6fb0e3b2839b7fdab37cdb60e55122d35b
+00000000 // Index of this transaction in the tree
+
+00 // Number of auxiliary branches
+00000000 // Index of this blockchain in the aux chain tree
+
+Parent Block:
+=============
+01000000 // Version
+08be13295c03e67cb70d00dae81ea06e78b9014e5ceb7d9ba504000000000000 // Previous block hash
+e0fd42db8ef6d783f079d126bea12e2d10c104c0927cd68f954d856f9e8111e5 // Merkle root
+9a23904e // Timestamp
+5dee091a // Bits
+1c655086 // Nonce
+
+01 // Tx  Count
+	01000000 // Version
+	01 // TxIn Count
+	0000000000000000000000000000000000000000000000000000000000000000ffffffff // Previous Out
+	08 // Script size
+	0469b2001b010152 // Script
+	ffffffff // Sequence number
+
+	01 // TxOut Count
+	00f2052a01000000  // Amount
+	43 // Script size
+	410489fe91e62847575c98deeab020f65fdff17a3a870ebb05820b414f3d8097218ec9a65f1e0ae0ac35af7247bd79ed1f2a24675fffb5aa6f9620e1920ad4bf5aa6ac // Script
+00000000 // Lock Time
