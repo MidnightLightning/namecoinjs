@@ -45,6 +45,8 @@ e0fd42db8ef6d783f079d126bea12e2d10c104c0927cd68f954d856f9e8111e5 // Merkle root
 5dee091a // Bits
 1c655086 // Nonce
 
+Transactions:
+=============
 01 // Tx  Count
 	01000000 // Version
 	01 // TxIn Count

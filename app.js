@@ -19,13 +19,3 @@ var chain = node.getBlockChain();
 chain.addListener('txSave', function(e) {
   //console.log(e);
 });
-
-/*
-console.log(switchEndian('0000000000660bad0d9fbde55ba7ee14ddf766ed5f527e3fbca523ac11460b92'));
-function switchEndian(hex) {
-	if (hex.length % 2 !== 0) hex = '0' + hex;
-	var pieces = hex.match(/(.{2})/g);
-	pieces.reverse();
-	return pieces.join('');
-}
-*/
