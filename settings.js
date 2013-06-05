@@ -17,73 +17,12 @@ cfg.network.auxPOWFlag = 1 << 8;
 cfg.network.auxPOWStart = 19200;
 cfg.network.auxPOWChain = 1;
 
+cfg.network.fullRetargetStart = 19200; // Full retarget checkpoint to fix the "time travel" bug
 
-/*
-bool GenesisBlock(CBlock& block, int extra)
-{
-    block = CBlock();
-    block.hashPrevBlock = 0;
-    block.nVersion = 1;
-    block.nTime    = 1303000001;
-    block.nBits    = 0x1c007fff;
-    block.nNonce   = 0xa21ea192U;
-    const char* pszTimestamp = "... choose what comes next.  Lives of your own, or a return to chains. -- V";
-    CTransaction txNew;
-    txNew.vin.resize(1);
-    txNew.vout.resize(1);
-    txNew.vin[0].scriptSig = CScript() << block.nBits << CBigNum(++extra) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
-    txNew.vout[0].nValue = 50 * COIN;
-    txNew.vout[0].scriptPubKey = CScript() << ParseHex("04b620369050cd899ffbbc4e8ee51e8c4534a855bb463439d63d235d4779685d8b6f4870a238cf365ac94fa13ef9a2a22cd99d0d5ee86dcabcafce36c7acf43ce5") << OP_CHECKSIG;
-    block.vtx.push_back(txNew);
-    block.hashMerkleRoot = block.BuildMerkleTree();
-    printf("====================================\n");
-    printf("Merkle: %s\n", block.hashMerkleRoot.GetHex().c_str());
-    printf("Block: %s\n", block.GetHash().GetHex().c_str());
-    block.print();
-    assert(block.GetHash() == hashGenesisBlock);
-    return true;
-}
-*/
+// 19200: First block to allow merged mining (and does use it)
+// 24192: First block to use "full retarget" size
+// 29812: First block to use merged mining with more than one auxiliary chain
 
-/*
-{
-    "hash" : "000000000062b72c5e2ceb45fbc8587e807c155b0da735e6483dfba2f0a9c770",
-    "version" : 1,
-    "prev_block" : "0000000000000000000000000000000000000000000000000000000000000000",
-    "mrkl_root" : "41c62dbd9068c89a449525e3cd5ac61b20ece28c3c38b3f35b2161f0e6d3cb0d",
-    "time" : 1303000001,
-    "bits" : 469794815,
-    "nonce" : 2719916434,
-    "n_tx" : 1,
-    "size" : 292,
-    "tx" : [
-        {
-            "hash" : "41c62dbd9068c89a449525e3cd5ac61b20ece28c3c38b3f35b2161f0e6d3cb0d",
-            "version" : 1,
-            "lock_time" : 0,
-            "size" : 211,
-            "in" : [
-                {
-                    "prev_out" : {
-                        "hash" : "0000000000000000000000000000000000000000000000000000000000000000",
-                        "n" : 4294967295
-                    },
-                    "coinbase" : "04ff7f001c020a024b2e2e2e2063686f6f7365207768617420636f6d6573206e6578742e20204c69766573206f6620796f7572206f776e2c206f7220612072657475726e20746f20636861696e732e202d2d2056"
-                }
-            ],
-            "out" : [
-                {
-                    "value" : 50.00000000,
-                    "scriptPubKey" : "04b620369050cd899ffbbc4e8ee51e8c4534a855bb463439d63d235d4779685d8b6f4870a238cf365ac94fa13ef9a2a22cd99d0d5ee86dcabcafce36c7acf43ce5 OP_CHECKSIG"
-                }
-            ]
-        }
-    ],
-    "mrkl_tree" : [
-        "41c62dbd9068c89a449525e3cd5ac61b20ece28c3c38b3f35b2161f0e6d3cb0d"
-    ]
-}
-*/
 cfg.network.genesisBlock = {
   'height': 0,
   'nonce': 0xa21ea192,
