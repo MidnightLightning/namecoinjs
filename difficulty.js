@@ -42,7 +42,14 @@ var calcDifficulty = function (target) {
 };
 
 
-var bits = new Buffer(process.argv[2], 'hex');
+var input = process.argv[2];
+if (input.indexOf('0x') == 0) {
+  input = input.substring(2);
+} else if (/[A-Fa-f]/.test(input) == false) {
+  input = parseInt(input).toString(16); // Integer bits given
+}
+
+var bits = new Buffer(input, 'hex');
 var target = decodeDiffBits(bits.readUInt32BE(0));
 var diff = calcDifficulty(target);
 
