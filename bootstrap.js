@@ -9,6 +9,10 @@ Bootstrapper.prototype.bootstrap = function (node, peermanager) {
   var self = this;
 
   this.hosts.forEach(function (host) {
+    if ('string' == typeof host) {
+      peermanager.addPeer(host, 8334);
+      return;
+    }
     var addr = host.toString(16);
     if (addr.length < 8) addr = '0' + addr;
     var pieces = addr.match(/.{2}/g);

@@ -9,7 +9,8 @@ var cfg = exports.Settings = new Bitcoin.Settings();
 cfg.network.port = 8334;
 cfg.network.magicBytes = hex('f9beb4fe');
 cfg.network.bootstrap = [
-  new Bootstrapper([0x58cea445, 0x2b562f4e, 0x291f20b2])
+  new Bootstrapper([0x58cea445, 0x2b562f4e, 0x291f20b2]),
+  new Bootstrapper(['88.190.28.114', '198.23.149.232', '204.246.67.102', '61.164.151.77', '81.7.8.133'])
 ];
 
 cfg.network.altChain = true;
@@ -19,9 +20,10 @@ cfg.network.auxPOWChain = 1;
 
 cfg.network.fullRetargetStart = 19200; // Full retarget checkpoint to fix the "time travel" bug
 
-// 19200: First block to allow merged mining (and does use it)
-// 24192: First block to use "full retarget" size
-// 29812: First block to use merged mining with more than one auxiliary chain
+// 19200: d8a7c3e01e First block to allow merged mining (and does use it)
+// 24192: 71b91c98a8 First block to use "full retarget" size
+// 26972: cdd6eb3877 First block with a reversed "parent block" hash entry; this isn't a validated field, so many others down the chain have it reversed too
+// 29812: a3d2c18acc First block to use merged mining with more than one auxiliary chain
 
 cfg.network.genesisBlock = {
   'height': 0,
